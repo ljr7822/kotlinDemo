@@ -7,7 +7,7 @@ package com.iwen.kotlin
  * @DateTime: 2020/6/28 21:19
  */
 class Demo01 {
-    companion object { // 我是静态块
+    companion object { //我是静态块
         /**
          这里面定义的静态变量跟静态方法，类似java的：static
          **/
