@@ -67,4 +67,3 @@ class Sqlite2 private constructor(){
         println("hello 懒汉式 改造")
     }
 }
-//***************
