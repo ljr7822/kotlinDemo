@@ -11,6 +11,8 @@ fun main() {
     Person.instance.show()
     // 3.懒汉式访问单例
     Sqlite.getInstance().show()
+    // 3.懒汉式改造访问单例
+    Sqlite2.default.show()
 }
 
 /**
@@ -47,5 +49,21 @@ class Sqlite private constructor(){
     }
     fun show(){
         println("hello 懒汉式")
+    }
+}
+
+/**
+ * 懒汉式 改造
+ */
+class Sqlite2 private constructor(){
+    // 1.私有化构造方法 private constructor()
+    // 2.创建单例对象
+    companion object{
+        val default:Sqlite2 by lazy(LazyThreadSafetyMode.SYNCHRONIZED){
+            Sqlite2()
+        }
+    }
+    fun show(){
+        println("hello 懒汉式 改造")
     }
 }
